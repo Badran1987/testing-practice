@@ -1,7 +1,13 @@
 // ==================================================
 // DEFINE FUNCTION(S)
 // ==================================================
-function product() {
+function product(num1, num2) {
+
+	if (num1 === undefined) num1=0
+        if (num2 === undefined) num2=1
+
+        var $result= num1*num2
+        return $result
 
 }
 
@@ -20,21 +26,33 @@ try {
   // Test Case 2
   // --------------------------------------------------
   // It should return 0 when either of the numbers are 0.
+  var result = product(0, 1);
+  if (result !== 0) throw new Error('Expected product(0, 1) to be 0. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
   // It should ignore additional numbers.
 
+  var result = product(0, 1, 3, 4);
+  if (result !== 0) throw new Error('Expected product(0, 1, 3, 4) to be 0. Received: ' + result);
+
   // --------------------------------------------------
   // Test Case 4
   // --------------------------------------------------
   // When invoked with only 1 number, it should return that number.
+  
+  var result = product(4);
+  if (result !== 4) throw new Error('Expected product(4) to be 4. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 5
   // --------------------------------------------------
   // When invoked with no numbers, it should return 0.
+
+  var result = product();
+  if (result !== 0) throw new Error('Expected product() to be 0. Received: ' + result);
+
 
   console.log('All tests passed successfully.');
 
